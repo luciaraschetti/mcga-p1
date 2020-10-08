@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 600px;
     height: 400px;
-    box-shadow: 2px 4px 10px rgba(0,0,0,.5);
+    box-shadow: 2px 4px 10px #00000080;
 }
 
 .toolbar {
@@ -20,16 +20,41 @@
 }
 
 .terminal-body {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     background: #380428ee;
+    color: #d5d0ce;
 }
 
-.terminal-body p {
-    margin-left: 0.5em;
+.typed {
+    margin: 0.5em 0 0 0.5em;
+}
+
+.text{
+    margin-bottom: 1.2em;
+    display: block;
     font-family: 'Ubuntu mono', sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
-    color: #d5d0ce;
+}
+
+.Typist .Cursor{
+    display: inline-block; 
+}
+
+.Typist .Cursor--blinking{
+    opacity: 1;
+    animation: blink 1s linear infinite; 
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1; }
+    50% {
+        opacity: 0; }
+    100% {
+        opacity: 1; } 
 }
 
 @media only screen and (max-width: 600px) {
