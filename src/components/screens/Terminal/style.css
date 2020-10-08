@@ -1,0 +1,40 @@
+.terminal {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    box-shadow: 2px 4px 10px rgba(0,0,0,.5);
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 25px;
+    width: 100%;
+    padding: 0 8px;
+    border-radius: 6px 6px 0 0;
+    background: linear-gradient(#504b45 0%,#3c3b37 100%);
+    font-size: 0.75rem;
+    color: #d5d0ce;
+}
+
+.terminal-body {
+    height: 100%;
+    background: #380428ee;
+}
+
+.terminal-body p {
+    margin-left: 0.5em;
+    font-family: 'Ubuntu mono', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #d5d0ce;
+}
+
+@media only screen and (max-width: 600px) {
+    .terminal {
+        width: 95vw;
+        height: 60vh;
+    }
+}
