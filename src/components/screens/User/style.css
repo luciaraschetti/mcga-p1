@@ -1,102 +1,12 @@
-.window {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: 300px;
-    box-shadow: 2px 4px 10px #00000080;
-}
-
-.window .toolbar {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    height: 25px;
-    width: 100%;
-    padding: 0 8px;
-    border-radius: 6px 6px 0 0;
-    background: linear-gradient(#504b45 0%,#3c3b37 100%);
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: #d5d0ce;
-}
-
-.window-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: 100%;
-    background: #ebebebee;
-}
-
-.window-body input {
-    width: 80%;
-    margin: 0.5em;
-    padding: 0.1em;
-    border: 0;
-	border-radius: 5px;
-    box-shadow:inset 0 1.2px 2px #797979;
-    background: #ffffff;
-    font-size: 1.25rem;
-    text-align: center;
-    color: #4A4542;
-}
-
-.tabs {
-    display: flex;
-    flex-direction: row;
-    align-self: flex-start;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    margin-bottom: 2.5em;
-    background: linear-gradient(#524f4c 0%, #6b6864 100%);
-}
-
-.buttons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5em;
-    width: 80%;
-}
-
 .buttons button {
-    padding: 0px 13px;
-    outline: none;
-    border: 1px solid;
-    border-color: #c8c8c8 #c2c2c2 #acacac;
-    border-radius: 5px;
-    box-shadow: #0000000a 0px 1px;
+    border: 1px solid #F57F48;
     background: linear-gradient(#F57F48 0%, #E47640 100%);
-    font-size: 1rem;
-    line-height: 1.5em;
     color: #ffffff;
-    cursor: pointer;
 }
 
 .buttons button:active {
     background: linear-gradient(#F57F48 0%, #d8703c 100%);
     color: #ebebeb;
-}
-
-.tabs .buttons {
-    justify-content: flex-start;
-    margin: 0.4em 0.1em;
-}
-
-.tabs .buttons button {
-    margin: 0 0.2em;
-    border: 1px solid #474644;
-    background: linear-gradient(#524f4c 0%, #6b6864 100%);
-    font-size: 0.8rem;
-    color: #ece4d9;
-}
-
-.tabs .buttons button:active {
-    background: linear-gradient(#524f4c 0%, #64615d 100%);
-    color: #f7f7f7;
 }
 
 .buttons #edit {
