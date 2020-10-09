@@ -16,8 +16,7 @@ export class index extends Component {
     }
 
     updateValue = (name) => {
-        this.setState({name});
-        console.log(name)
+        this.setState({name: name});
     }
 
     componentDidMount = () => {
