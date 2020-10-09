@@ -1,9 +1,10 @@
 import React from 'react';
+import Terminal from '../Terminal';
 
 function index() {
     return (
         <div>
-            <h1>Home</h1>
+            <Terminal /> 
         </div>
     )
 }
