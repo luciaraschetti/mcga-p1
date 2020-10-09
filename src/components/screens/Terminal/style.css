@@ -28,15 +28,21 @@
 }
 
 .typed {
-    margin: 0.5em 0 0 0.5em;
+    margin: 0.2em 0 0 0.5em;
 }
 
 .text{
-    margin-bottom: 1.2em;
-    display: block;
     font-family: 'Ubuntu mono', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.9rem;
+}
+
+.user {
+    color: #6AC441;
+}
+
+.Typist {
+    margin-bottom: 0.9em;
 }
 
 .Typist .Cursor{
@@ -46,6 +52,15 @@
 .Typist .Cursor--blinking{
     opacity: 1;
     animation: blink 1s linear infinite; 
+}
+
+.user-name {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Ubuntu mono', sans-serif;
+    font-size: 0.92rem;
+    color: #d5d0ce;
 }
 
 @keyframes blink {
