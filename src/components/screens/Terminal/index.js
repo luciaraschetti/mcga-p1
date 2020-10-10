@@ -63,4 +63,4 @@ export class index extends Component {
     }
 }
 
-export default index
+export default index;

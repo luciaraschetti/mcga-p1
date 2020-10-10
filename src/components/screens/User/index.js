@@ -1,18 +1,53 @@
 import './style.css';
-import React from 'react';
+import React, { Component } from 'react';
 
-function index() {
-    return (
-        <>
-            <p className="title">User</p>
-            <input type="text" value="John Doe"></input>
-            <input type="text" value="2020"></input>
-            <div className="buttons">
-                <button id="edit">Edit</button>
-                <button id="counter">+</button>
-            </div>
-        </>                
-    )
+export default class index extends Component {
+    constructor () {
+        super();
+        this.state = {
+            user: 'John Doe',
+            year: '2020',
+            edit: true,
+        };
+    }
+
+    updateValue = (user, year) => {
+        this.setState({
+            user: user,
+            year: year
+        });
+    }
+
+    render() {
+        let edit = this.state.edit;
+        return (
+            <>
+                <p className="title">User</p>
+                <input 
+                    type="text" 
+                    value={this.state.user} 
+                    disabled={this.state.edit}
+                    onChange={(input) => this.updateValue(input.target.value, this.state.year)}
+                />
+                <input 
+                    type="text" 
+                    value={this.state.year} 
+                    disabled={this.state.edit}
+                    onChange={(input) => this.updateValue(this.state.user, input.target.value)}
+                />
+                <div className="buttons">
+                    <button 
+                        id="edit"
+                        onClick={() => {
+                                this.setState({edit: !edit});
+                            }
+                        }
+                    >
+                        {edit ? 'Edit' : 'Save'}
+                    </button>
+                    <button id="counter">+</button>
+                </div>
+            </>
+        )
+    }
 }
-
-export default index;
