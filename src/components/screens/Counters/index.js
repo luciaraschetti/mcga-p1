@@ -1,9 +1,14 @@
+import './style.css';
 import React from 'react';
+import Counter from './Counter/Counter';
 
 function index() {
     return (
-        <div>
-            <p>Counters</p>
+        <div className="counters">
+            <Counter />
+            <Counter />
+            <Counter />
+            <Counter />
         </div>
     )
 }
