@@ -5,6 +5,7 @@ import Counter from './Counter/Counter';
 function index() {
     return (
         <div className="counters">
+            <p className="title">Counters</p>
             <Counter />
             <Counter />
             <Counter />

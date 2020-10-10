@@ -1,3 +1,16 @@
+.window-body input {
+    width: 80%;
+    margin: 0.5em;
+    padding: 0.1em;
+    border: 0;
+	border-radius: 5px;
+    box-shadow:inset 0 1.2px 2px #797979;
+    background: #ffffff;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #4A4542;
+}
+
 .buttons button {
     border: 1px solid #F57F48;
     background: linear-gradient(#F57F48 0%, #E47640 100%);
