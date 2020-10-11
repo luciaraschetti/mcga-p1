@@ -27,13 +27,13 @@ export default class index extends Component {
                     type="text" 
                     value={this.state.user} 
                     disabled={this.state.edit}
-                    onChange={(input) => this.updateValue(input.target.value, this.state.year)}
+                    onChange={(input) => this.updateValue(input.target.value.replace(/[0-9*#+]/,''), this.state.year)}
                 />
                 <input 
                     type="text" 
                     value={this.state.year} 
                     disabled={this.state.edit}
-                    onChange={(input) => this.updateValue(this.state.user, input.target.value)}
+                    onChange={(input) => this.updateValue(this.state.user, input.target.value.replace(/\D/,''))}
                 />
                 <div className="buttons">
                     <button 
@@ -45,7 +45,6 @@ export default class index extends Component {
                     >
                         {edit ? 'Edit' : 'Save'}
                     </button>
-                    <button id="counter">+</button>
                 </div>
             </>
         )

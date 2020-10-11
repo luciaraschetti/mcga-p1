@@ -6,3 +6,11 @@
     width: 100%;
     overflow-y: scroll;
 }
+
+.counters p {
+    margin-bottom: 0;
+}
+
+.counters button {
+    padding: 0 0.4em;
+}
