@@ -11,13 +11,15 @@ export default class index extends Component {
         };
     }
 
-    addCounter() {
-        let counterCards = this.state.counters.concat(<Counter />);
-        this.setState({counters: counterCards});
+    getDate() {
+        let date = new Date(Date.now());
+        return date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} 
+        ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     }
 
-    delCounter() {
-        ///delete counter card
+    addCounter() {
+        let counterCards = this.state.counters.concat(<Counter date={this.getDate()} key={this.state.counters.length} />)
+        this.setState({counters: counterCards});
     }
 
     render() {

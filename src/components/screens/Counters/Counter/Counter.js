@@ -1,9 +1,9 @@
 import './Counter.css';
 import React from 'react';
 
-function Counter() {
+function Counter(props) {
     return (
-        <div className="counter">
+        <div className="counter" key={props.id} date={props.date}>
             <div className="buttons">
                 <div className="controls">
                     <button>-</button>
@@ -16,7 +16,7 @@ function Counter() {
             </div>
             <div className="details">
                 <p>Created:</p>
-                <p>10/10/10 10:00:00 PM</p>
+                <p>{props.date}</p>
                 <p>Updated:</p>
                 <p>10/10/10 10:00:00 PM</p>
             </div>
