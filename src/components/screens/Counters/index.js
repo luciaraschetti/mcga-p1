@@ -8,6 +8,7 @@ export default class index extends Component {
         super();
         this.state = {
             counters: [],
+            counterId: -1,
         };
     }
 
@@ -16,18 +17,26 @@ export default class index extends Component {
         return date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     }
 
-    addCounter = () => {
-        let counterCards = this.state.counters.concat(<Counter 
-                                                            date={this.getDate()} 
-                                                            key={this.state.counters.length} 
-                                                            delCounter={this.delCounter} 
-                                                            getDate={this.getDate}
-                                                    />)
-        this.setState({counters: counterCards});
+    getId() {
+        let newValue = this.state.counterId;
+        this.setState({counterId: (newValue + 1)});
+        return newValue;
     }
 
-    delCounter(id) {
-        ////
+    addCounter = () => {
+        let counterCards = this.state.counters;
+        counterCards.push({
+            id: this.getId(),
+            date: this.getDate(),
+        });
+        this.setState({counters: counterCards});
+        console.log(counterCards)
+    }
+
+    delCounter(counter) {
+        let newList = this.state.counters;
+        newList.splice(counter, 1);
+        this.setState({ counters: newList});
     }
 
     render() {
@@ -40,7 +49,16 @@ export default class index extends Component {
                         onClick={() => this.addCounter()}
                     >+</button>
                 </div>
-                {this.state.counters}
+                {
+                    this.state.counters.map((counter, i) => (
+                        <Counter 
+                            date={counter.date} 
+                            key={i}
+                            delCounter={this.delCounter.bind(this, i)} 
+                            getDate={this.getDate}
+                        />
+                    ))
+                }
             </div>
         )
     }

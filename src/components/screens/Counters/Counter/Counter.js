@@ -40,9 +40,9 @@ export default class Counter extends Component {
                         >+</button>
                     </div>
                     <div className="delete">
-                        <button onClick={() => {
-                            ///delCount()
-                        }}>Delete</button>
+                        <button onClick={this.props.delCounter}>
+                        Delete
+                        </button>
                     </div>
                 </div>
                 <div className="details">
