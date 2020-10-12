@@ -2,7 +2,6 @@ import './style.css';
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import Typist from 'react-typist';
-import Window from '../Window';
 
 export class index extends Component {
     constructor(props) {
@@ -13,7 +12,7 @@ export class index extends Component {
         };
     }
 
-    show() {
+    show = () => {
         this.setState({user: 'user@parcial-01:'});
     }
 
@@ -32,6 +31,9 @@ export class index extends Component {
     }
 
     componentDidMount = () => {
+        document.onmousedown = (e) => {
+            e.preventDefault();
+        }
         setTimeout(() => {
             this.show();
             this.nameInput.focus();
