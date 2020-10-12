@@ -1,9 +1,10 @@
 import './style.css';
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import User from '../User';
 import Counters from '../Counters';
 
-export default class index extends Component {
+class index extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +13,7 @@ export default class index extends Component {
     }
 
     render() {
+        const { location } = this.props;
         return (
             <>
                 <div className="window">
@@ -37,10 +39,16 @@ export default class index extends Component {
                                 </button>
                             </div>
                         </div>
-                        {this.state.tab ? <Counters /> : <User />}
+                        {this.state.tab ? <Counters /> : 
+                            <User user={
+                                (location.state) ? location.state.detail : ''
+                            }
+                        />}
                     </div>
                 </div>
             </>
         )
     }
 }
+
+export default withRouter(index);

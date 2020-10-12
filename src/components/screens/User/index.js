@@ -2,10 +2,10 @@ import './style.css';
 import React, { Component } from 'react';
 
 export default class index extends Component {
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
         this.state = {
-            user: 'John Doe',
+            user: this.props.user,
             year: '2020',
             edit: true,
         };
