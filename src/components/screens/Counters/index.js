@@ -17,7 +17,7 @@ export default class index extends Component {
         return date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     }
 
-    getId() {
+    getId = () => {
         let newValue = this.state.counterId;
         this.setState({counterId: (newValue + 1)});
         return newValue;
@@ -30,10 +30,9 @@ export default class index extends Component {
             date: this.getDate(),
         });
         this.setState({counters: counterCards});
-        console.log(counterCards)
     }
 
-    delCounter(counter) {
+    delCounter = (counter) => {
         let newList = this.state.counters;
         newList.splice(counter, 1);
         this.setState({ counters: newList});
@@ -54,7 +53,7 @@ export default class index extends Component {
                         <Counter 
                             date={counter.date} 
                             key={i}
-                            delCounter={this.delCounter.bind(this, i)} 
+                            delCounter={() => this.delCounter(i)} 
                             getDate={this.getDate}
                         />
                     ))

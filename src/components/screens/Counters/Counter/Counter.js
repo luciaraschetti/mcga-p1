@@ -10,7 +10,7 @@ export default class Counter extends Component {
         };
     }
 
-    decCount() {
+    decCount = () => {
         let newValue = this.state.count;
         this.setState({
             count: (newValue - 1),
@@ -18,7 +18,7 @@ export default class Counter extends Component {
         });
     }
 
-    incCount() {
+    incCount = () => {
         let newValue = this.state.count;
         this.setState({
             count: (newValue + 1),
@@ -31,18 +31,12 @@ export default class Counter extends Component {
             <div className="counter" key={this.props.id} date={this.props.date}>
                 <div className="buttons">
                     <div className="controls">
-                        <button
-                            onClick={() => this.decCount()}
-                        >-</button>
+                        <button onClick={() => this.decCount()}>-</button>
                         <span>{this.state.count}</span>
-                        <button
-                            onClick={() => this.incCount()}
-                        >+</button>
+                        <button onClick={() => this.incCount()}>+</button>
                     </div>
                     <div className="delete">
-                        <button onClick={this.props.delCounter}>
-                        Delete
-                        </button>
+                        <button onClick={this.props.delCounter}>Delete</button>
                     </div>
                 </div>
                 <div className="details">

@@ -39,11 +39,10 @@ class index extends Component {
                                 </button>
                             </div>
                         </div>
-                        {this.state.tab ? <Counters /> : 
-                            <User user={
-                                (location.state) ? location.state.detail : ''
-                            }
-                        />}
+                        {
+                            this.state.tab ? <Counters /> : 
+                            <User user={ (location.state) ? location.state.detail : ''}/>
+                        }
                     </div>
                 </div>
             </>
