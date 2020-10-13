@@ -32,10 +32,10 @@ export default class index extends Component {
         this.setState({counters: counterCards});
     }
 
-    delCounter = (counter) => {
-        let newList = this.state.counters;
-        newList.splice(counter, 1);
-        this.setState({ counters: newList});
+    delCounter = (selectedCounter) => {
+        let counterCards = this.state.counters;
+        counterCards.splice(selectedCounter, 1);
+        this.setState({ counters: counterCards});
     }
 
     render() {
@@ -49,14 +49,16 @@ export default class index extends Component {
                     >+</button>
                 </div>
                 {
-                    this.state.counters.map((counter, i) => (
-                        <Counter 
-                            date={counter.date} 
-                            key={i}
-                            delCounter={() => this.delCounter(i)} 
-                            getDate={this.getDate}
-                        />
-                    ))
+                    this.state.counters.map((counter, i) => {
+                        return (
+                            <Counter 
+                                date={counter.date} 
+                                key={counter.id}
+                                delCounter={() => this.delCounter(i)} 
+                                getDate={this.getDate}
+                            />
+                        )
+                    })
                 }
             </div>
         )
