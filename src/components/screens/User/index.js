@@ -11,6 +11,31 @@ export default class index extends Component {
         };
     }
 
+    editState = (isValid) => {
+        if(isValid) {
+            let edit = this.state.edit;
+            this.setState({edit: !edit});
+        }
+    }
+
+    validateInput = () => {
+        let isValid = true;
+
+        if(!/^[a-zA-Z\s]*$/g.test(this.userInput.value)) {
+            this.userInput.value = '';
+            this.userInput.placeholder = 'Only letters allowed';
+            isValid = false;
+        }
+
+        if(!/^[0-9]*$/g.test(this.yearInput.value)) {
+            this.yearInput.value = '';
+            this.yearInput.placeholder = 'Only numbers allowed';
+            isValid = false;
+        }
+        
+        this.editState(isValid);
+    }
+
     updateValue = (user, year) => {
         this.setState({
             user: user,
@@ -19,27 +44,33 @@ export default class index extends Component {
     }
 
     render() {
-        let edit = this.state.edit;
+        let edit = this.state.edit;   
         return (
             <>
                 <p className="title">User</p>
                 <input 
                     type="text" 
+                    ref={(input) => {this.userInput = input;}}
                     value={this.state.user} 
                     disabled={this.state.edit}
-                    onChange={(input) => this.updateValue(input.target.value.replace(/[0-9*#+]/,''), this.state.year)}
+                    onChange={(input) => this.updateValue(input.target.value, this.state.year)}
                 />
                 <input 
                     type="text" 
+                    ref={(input) => {this.yearInput = input;}}
                     value={this.state.year} 
                     disabled={this.state.edit}
-                    onChange={(input) => this.updateValue(this.state.user, input.target.value.replace(/\D/,''))}
+                    onChange={(input) => this.updateValue(this.state.user, input.target.value)}
                 />
                 <div className="buttons">
                     <button 
                         id="edit"
                         onClick={() => {
-                                this.setState({edit: !edit});
+                                if(!edit) {
+                                    this.validateInput();
+                                } else {
+                                    this.editState(true);
+                                }
                             }
                         }
                     >

@@ -44,8 +44,10 @@ export class index extends Component {
     }
 
     componentDidMount = () => {
+        this.nameInput.disabled = true;
         setTimeout(() => {
             this.show();
+            this.nameInput.disabled = false;
             this.nameInput.focus();
         }, 5100);
     }
