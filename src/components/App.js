@@ -10,16 +10,16 @@ function App() {
         <Router>
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/terminal" exact component={Terminal} />
-                <Route path="/window" exact component={Window} />
-                <Route path="/user" exact component={Window} />
-                <Route path="/counters" exact 
+                <Route path="/terminal" component={Terminal} />
+                <Route path="/window" component={Window} />
+                <Route path="/user" component={Window} />
+                <Route path="/counters" 
                     render={(props) => (
                     <Window {...props} tab={true} />
                     )}
                 />
                 <Route component={() => (
-                    <Home />
+                    <Window />
                 )} />
             </Switch>
         </Router>

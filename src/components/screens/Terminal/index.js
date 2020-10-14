@@ -20,13 +20,26 @@ export class index extends Component {
         this.setState({name: name});
     }
 
+    changePath = () => {
+        this.props.history.push({
+            pathname: '/window',
+            state: {detail: this.state.name}
+        });
+    }
+
+    validateInput = () => {
+        if(!/^[a-zA-Z\s]*$/g.test(this.nameInput.value)) {
+            this.nameInput.value = '';
+            this.nameInput.placeholder = 'Only alphabetic characters allowed';
+        } else {
+            this.changePath();
+        }
+    }
+
     enterPressed = (e) => {
         let code = e.keyCode || e.which;
         if(code === 13) {
-            this.props.history.push({
-                pathname: '/window',
-                state: {detail: this.state.name}
-            });
+            this.validateInput();
         }
     }
 
@@ -64,7 +77,7 @@ export class index extends Component {
                         <input 
                             className="user-name" 
                             type="text"
-                            ref={(input) => {this.nameInput = input;}} 
+                            ref={(input) => {this.nameInput = input;}}
                             value={this.state.name}
                             onChange={(input) => this.updateValue(input.target.value)}
                             onKeyPress={() => this.nameInput.addEventListener('keydown', this.enterPressed)}
