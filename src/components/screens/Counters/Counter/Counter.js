@@ -40,9 +40,9 @@ export default class Counter extends Component {
                     </div>
                 </div>
                 <div className="details">
-                    <p>Created:</p>
+                    <p className="tag">Created:</p>
                     <p>{this.props.date}</p>
-                    <p>Updated:</p>
+                    <p className="tag">Updated:</p>
                     <p>{this.state.updated}</p>
                 </div>
             </div>

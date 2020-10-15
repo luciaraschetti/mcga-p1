@@ -39,10 +39,17 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin-left: 0.5em;
 }
 
 .details p {
     margin: 0;
+    margin-bottom: 0.1em;
     padding: 0.2em 0;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+}
+
+.details .tag {
+    font-weight: 700;
+    color: #F37E47;
 }
