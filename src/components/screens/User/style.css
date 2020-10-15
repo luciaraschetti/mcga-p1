@@ -11,6 +11,11 @@
     color: #4A4542;
 }
 
+.window-body input:disabled {
+    background: #ebebeb;
+    color: #585452;
+}
+
 .buttons button {
     border: 1px solid #F57F48;
     background: linear-gradient(#F57F48 0%, #E47640 100%);
